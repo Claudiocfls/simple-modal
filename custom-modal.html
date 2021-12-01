@@ -5,8 +5,17 @@
   </head>
   <body>
     <button id="button-1">Click me</button>
+    <p id="feedback-text-1"></p>
     <custom-modal id="modal-1" message="Are you sure you want to continue?"></custom-modal>
 
-    <script src="custom-modal.js"></script>
+    <script src="custom-modal.js"></script> 
+    <script>
+      document.querySelector('#button-1').addEventListener('click', function () {
+        document.querySelector('#modal-1').setAttribute('open', 'true');
+      });
+      document.querySelector('#modal-1').addEventListener('modal-option-clicked', function (evt) {
+        document.querySelector('#feedback-text-1').innerText = `You just clicked "${evt.detail.option}"`;
+      });
+    </script>
   </body>
 </html>
