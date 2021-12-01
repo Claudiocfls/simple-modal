@@ -32,6 +32,18 @@ template.innerHTML = `
     margin: 20px;
   }
 
+  @media (max-width: 500px)
+  {
+    .modal-content {
+      height: 100%;
+      width: 100%;
+    }
+    .buttons-wrapper {
+      flex-direction: column;
+      width: 60%;
+    }
+  }
+
   button {
     padding: 12px;
   }
